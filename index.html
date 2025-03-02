@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPUTER GRAPHICS 41.008.198.23</title>
+    <script src="script/aframe.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <img src="milo.jpg" alt="" id="milo" />
+            <img src="download.jpg" alt="" id="milk" />
+            <img src="textures/SpecularMap.jpg" alt="" id="draft" />
+            <img src="textures/FenceWall.jpg" alt="" id="wall" />
+        </a-assets>
+
+        <!-- main entrance frame-->
+        <a-cylinder color="#b78727" roughness="10" repeat="20 20" height="5" position="0 2 0" side="double" radius="20" open-ended="true" theta-start="10" theta-length="340" material ="metalness: 0.4; src:  #wall"></a-cylinder>
+        <!-- inner frame-->
+        <a-cylinder color="#002147" roughness="0.9" repeat="20 20" height="1" wireframe="true" position="0 0.2 0" side="double" radius="10" open-ended="true" theta-start="10" theta-length="340"></a-cylinder>
+        <!--Sky-->
+        <a-sky src="textures/360/Sky Background-56.jpg"></a-sky>
+
+        <!--Floor-->
+        <a-plane src="textures/TexturesCom_FloorsCheckerboard0034_1_M.jpg" color="#c9ffe5" shader="flat" repeat="100 100" position="0 -0.1 0" rotation="-90 0 0" scale="200 200" roughness="0.5"></a-plane>
+
+        
+        <!-- Cone overhead covering the table area -->
+        <a-cone position="0 6 0" color="#a6d608" height="5" roughness="5" src="textures/DisplacementMap.jpg" radius="5" side="double" open-ended="true" radius-bottom="3.5"></a-cone>
+        
+        <!-- Table - centered at origin -->
+        <a-box src="textures/Mura_01_TileMat_baseColor.jpg" color="#f0dc82" position="0 1 0" height="0.1" width="3" depth="3">
+            <a-box src="textures/TexturesCom_BrickRound0125_6_seamless_S.jpg" position="-1.2 -0.5 1.0" width="0.1" height="1" depth="0.1"></a-box>
+            <a-box src="textures/TexturesCom_BrickRound0125_6_seamless_S.jpg" position="1.2 -0.5 1.0" width="0.1" height="1" depth="0.1"></a-box>
+            <a-box src="textures/TexturesCom_BrickRound0125_6_seamless_S.jpg" position="1.2 -0.5 -1" width="0.1" height="1" depth="0.1"></a-box>
+            <a-box src="textures/TexturesCom_BrickRound0125_6_seamless_S.jpg" position="-1.2 -0.5 -1.0" width="0.1" height="1" depth="0.1"></a-box>
+        </a-box>
+                <!--  Legs -->
+                <a-cylinder radius="0.1" position="-2.4 2 2.2" src="textures/FenceWall.jpg" height="3.5"></a-cylinder>
+                <a-cylinder radius="0.1" position="2.4 2 2.2" src="textures/FenceWall.jpg" height="3.5" ></a-cylinder>
+                <a-cylinder radius="0.1" position="-2.4 2 -2.2" src="textures/FenceWall.jpg" height="3.5"></a-cylinder>
+                <a-cylinder radius="0.1" position="2.4 2 -2.2" src="textures/FenceWall.jpg" height="3.5" ></a-cylinder>
+
+        <!--Items on table-->
+        <a-cylinder src="#milo" position="0.5 1.2 0" height="0.2" radius="0.07"></a-cylinder>
+        <a-cylinder src="#milk" position="-0.5 1.2 0" height="0.2" radius="0.07"></a-cylinder>
+        <a-cylinder src="#draft" color="#9acd32" side="double" open-ended="false" position="0 1.1 0.5" height="0.2" radius="0.07"></a-cylinder>
+        <a-cylinder src="#draft" color="#adff22" side="double" open-ended="false" position="0 1.1 -0.5" height="0.2" radius="0.07"></a-cylinder>
+
+        <!-- Chair 1 - North position -->
+        <a-entity position="0 0 2">
+            <a-box width="1" height=".2" depth="1" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" color="#ffa089" position="0 1 0" rotation="0 0 0">
+                <a-box width="0.4" height="1.0" depth="0.01" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" color="#ffa089" position="0 0.4 .5" rotation="0 0 0"></a-box>
+                <a-box width="0.1" height="1.0" depth="0.01" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" color="#ffa089" position="-0.3 0.4 .5" rotation="0 0 0"></a-box>
+                <a-box width="0.1" height="1.0" depth="0.01" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" color="#ffa089" position="0.3 0.4 .5" rotation="0 0 0"></a-box>
+            </a-box>
+            <a-box width="1" height="0.3" depth="0.05" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" color="#ffa089" position="0 2 0.5"></a-box>
+            <!-- Legs -->
+            <a-box width="0.1" height="1.0" depth="0.05" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" position="0.45 0.5 0.45" rotation="0 0 0"></a-box>
+            <a-box width="0.08" height="1.0" depth="0.05" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" position="-0.45 0.5 0.45" rotation="0 0 0"></a-box>
+            <a-box width="0.08" height="1.0" depth="0.05" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" position="0.45 0.5 -0.45" rotation="0 0 0"></a-box>
+            <a-box width="0.08" height="1.0" depth="0.05" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" position="-0.45 0.5 -0.45" rotation="0 0 0"></a-box>
+        </a-entity>
+        
+        <!-- Chair 2 - South position -->
+        <a-entity position="0 0 -2">
+            <a-entity position="0 0 0" rotation="0 180 0">
+                <a-box width="1" height=".2" depth="1" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" color="#ffa089" position="0 1 0" rotation="0 0 0">
+                    <a-box width="0.4" height="1.0" depth="0.01" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" color="#ffa089" position="0 0.4 .5" rotation="0 0 0"></a-box>
+                    <a-box width="0.1" height="1.0" depth="0.01" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" color="#ffa089" position="-0.3 0.4 .5" rotation="0 0 0"></a-box>
+                    <a-box width="0.1" height="1.0" depth="0.01" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" color="#ffa089" position="0.3 0.4 .5" rotation="0 0 0"></a-box>
+                </a-box>
+                <a-box width="1" height="0.3" depth="0.05" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" color="#ffa089" position="0 2 0.5"></a-box>
+                <!-- Legs -->
+                <a-box width="0.08" height="1.0" depth="0.05" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" position="0.45 0.5 0.45" rotation="0 0 0"></a-box>
+                <a-box width="0.08" height="1.0" depth="0.05" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" position="-0.45 0.5 0.45" rotation="0 0 0"></a-box>
+                <a-box width="0.08" height="1.0" depth="0.05" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" position="0.45 0.5 -0.45" rotation="0 0 0"></a-box>
+                <a-box width="0.08" height="1.0" depth="0.05" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" position="-0.45 0.5 -0.45" rotation="0 0 0"></a-box>
+            </a-entity>
+        </a-entity>
+        
+        <!-- Chair 3 - East position -->
+        <a-entity position="2 0 0">
+            <a-entity position="0 0 0" rotation="0 90 0">
+                <a-box width="1" height=".2" depth="1" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" color="#ffa089" position="0 1 0" rotation="0 0 0">
+                    <a-box width="0.4" height="1.0" depth="0.01" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" color="#ffa089" position="0 0.4 .5" rotation="0 0 0"></a-box>
+                    <a-box width="0.1" height="1.0" depth="0.01" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" color="#ffa089" position="-0.3 0.4 .5" rotation="0 0 0"></a-box>
+                    <a-box width="0.1" height="1.0" depth="0.01" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" color="#ffa089" position="0.3 0.4 .5" rotation="0 0 0"></a-box>
+                </a-box>
+                <a-box width="1" height="0.3" depth="0.05" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" color="#ffa089" position="0 2 0.5"></a-box>
+                <!-- Legs -->
+                <a-box width="0.08" height="1.0" depth="0.05" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" position="0.45 0.5 0.45" rotation="0 0 0"></a-box>
+                <a-box width="0.08" height="1.0" depth="0.05" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" position="-0.45 0.5 0.45" rotation="0 0 0"></a-box>
+                <a-box width="0.08" height="1.0" depth="0.05" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" position="0.45 0.5 -0.45" rotation="0 0 0"></a-box>
+                <a-box width="0.08" height="1.0" depth="0.05" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" position="-0.45 0.5 -0.45" rotation="0 0 0"></a-box>
+            </a-entity>
+        </a-entity>
+        
+        <!-- Chair 4 - West position -->
+        <a-entity position="-2 0 0">
+            <a-entity position="0 0 0" rotation="0 270 0">
+                <a-box width="1" height=".2" depth="1" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" color="#ffa089" position="0 1 0" rotation="0 0 0">
+                    <a-box width="0.4" height="1.0" depth="0.01" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" color="#ffa089" position="0 0.4 .5" rotation="0 0 0"></a-box>
+                    <a-box width="0.1" height="1.0" depth="0.01" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" color="#ffa089" position="-0.3 0.4 .5" rotation="0 0 0"></a-box>
+                    <a-box width="0.1" height="1.0" depth="0.01" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" color="#ffa089" position="0.3 0.4 .5" rotation="0 0 0"></a-box>
+                </a-box>
+                <a-box width="1" height="0.3" depth="0.05" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" color="#ffa089" position="0 2 0.5"></a-box>
+                <!-- Legs -->
+                <a-box width="0.08" height="1.0" depth="0.05" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" position="0.45 0.5 0.45" rotation="0 0 0"></a-box>
+                <a-box width="0.08" height="1.0" depth="0.05" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" position="-0.45 0.5 0.45" rotation="0 0 0"></a-box>
+                <a-box width="0.08" height="1.0" depth="0.05" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" position="0.45 0.5 -0.45" rotation="0 0 0"></a-box>
+                <a-box width="0.08" height="1.0" depth="0.05" src="textures/Passerella_Legno_TopMura_02_Mat_baseColor.jpg" position="-0.45 0.5 -0.45" rotation="0 0 0"></a-box>
+            </a-entity>
+        </a-entity>
+
+        <!--Car park-->
+        <a-circle rotation="-90 0 0" src="textures/360/Small theatre.jpg" position="-15 0 0" scale="4 4" ></a-circle>
+        
+        <!-- Camera -->
+        <a-entity position="0 1 10">
+            <a-camera>
+              <a-cursor color="#FFFFFF"></a-cursor>
+            </a-camera>
+        </a-entity>
+        
+
+        <!-- Rotating Box -->
+        <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear;">
+            <a-box position="0 0.5 -8" color="pink" depth="0.5" height="1" width="1"></a-box>
+        </a-entity>
+    </a-scene>
+</body>
+</html>
