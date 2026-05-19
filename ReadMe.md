@@ -1,60 +1,84 @@
-# COMPUTER GRAPHICS 41.008.198.23
+# A-Frame
 
-## 3D Virtual Environment
+![A-Frame](https://img.shields.io/badge/A-Frame-333333?style=flat&logo=github) ![VR](https://img.shields.io/badge/VR-333333?style=flat&logo=github) ![3D](https://img.shields.io/badge/3D-333333?style=flat&logo=github) ![WebGL](https://img.shields.io/badge/WebGL-333333?style=flat&logo=github) ![HTML5](https://img.shields.io/badge/HTML5-333333?style=flat&logo=github) ![JavaScript](https://img.shields.io/badge/JavaScript-333333?style=flat&logo=github)
 
-This project is a 3D virtual environment created with A-Frame, featuring an interactive scene with furniture, objects, and animations.
+## Overview
 
-![Project Screenshot](screenshot.jpeg)
+Interactive 3D virtual reality environment scene built with WebGL and A-Frame.
 
-## Features
+---
 
-- Interactive 3D environment viewable in any modern web browser
-- Detailed furniture models (table and chairs)
-- Animated elements (floating cylinders and rotating box)
-- Custom textures and materials
-- 360-degree panoramic background
-- Responsive design that works across devices
+## Key Features
+
+- **Experimental layout rendering tests**
+- **Custom web components showcase**
+- **Playground structure for DOM script optimization**
+
+---
+
+## Technology Stack
+
+- **A-Frame**
+- **VR**
+- **3D**
+- **WebGL**
+- **HTML5**
+- **JavaScript**
+
+---
 
 ## Getting Started
 
 ### Prerequisites
 
-No special installation is required to view this project. You only need:
-- A modern web browser (Chrome, Firefox, Edge, Safari)
-- Internet connection (for initial loading)
+Ensure you have the required runtimes installed:
+- Git
+- Appropriate package manager (npm/yarn or pip depending on stack)
 
-### Viewing the Project
+### Setup Instructions
 
-1. Simply open the `assignment.html` file in your web browser
-2. Navigate the scene using:
-   - Mouse: Click and drag to look around
-   - WASD keys: Move forward, left, backward, right
-   - Arrow keys: Alternative movement controls
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/iamroidev/A-Frame.git
+   cd A-Frame
+   ```
 
-## Technologies Used
+2. **Install Dependencies**
+   *For Node/Next.js/React Native projects:*
+   ```bash
+   npm install
+   ```
+   *For Python projects:*
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-- [A-Frame](https://aframe.io/) - Web framework for building virtual reality experiences
-- HTML5
-- Custom textures and 3D models
+3. **Configure Environment**
+   Duplicate the env file (if present) and populate variables:
+   ```bash
+   cp .env.example .env
+   ```
 
-## Project Structure
+4. **Launch Application**
+   *For React/Next.js:*
+   ```bash
+   npm run dev
+   ```
+   *For Expo/React Native:*
+   ```bash
+   npx expo start
+   ```
+   *For Python/Flask:*
+   ```bash
+   python app.py
+   ```
 
-- `assignment.html` - Main project file
-- `script/aframe.js` - A-Frame framework
-- `textures/` - Directory containing all texture assets
-- Various image assets (milo.jpg, download.jpg, etc.)
+---
 
-## Future Improvements
+## Contributing
 
-- Adding interactive elements
-- Implementing user controls for object manipulation
-- Adding sound effects and background music
-- Optimizing performance for mobile devices
-
-## Credits
-
-Created by Richard Opoku for COMPUTER GRAPHICS 41.008.198.23
+Contributions are welcome! Please open an issue or submit a pull request with any improvements.
 
 ## License
 
-This project is provided for educational purposes.
+This project is licensed under the MIT License - see the LICENSE file for details.
